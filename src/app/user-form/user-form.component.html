@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="panel panel-success">
+        <div class="panel-heading">User Registration Form</div>
+        <div class="panel-body">
+            <form #regiForm='ngForm' (ngSubmit)="mySubmit(regiForm.value)">
+                <div class="form-group">
+                    <label>UserName</label>
+                    <input type="text" name='uname' ngModel #uname='ngModel' class="form-control" required minlength="5"
+                        maxlength="15" pattern="[a-zA-Z]+">
+                </div>
+                <div class="form-group">
+                    <label>Mail*</label>
+                    <input type="mail" name='umail' ngModel #umail='ngModel' class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Date*</label>
+                    <input type="date" name='date' ngModel #date='ngModel' class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Time From*</label>
+                    <input type="time" name='timefrom' ngModel #timefrom='ngModel' class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Time To*</label>
+                    <input type="time" name='timeto' ngModel #timeto='ngModel' class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Agenda</label>
+                    <input type="text" name='agenda' ngModel #agenda='ngModel' class="form-control" >
+                </div>
+                <button type="submit" [disabled]="regiForm.form.invalid" class="btn btn-success">Submit</button>
+
+
+
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<app-display [disname]="arr"></app-display>
